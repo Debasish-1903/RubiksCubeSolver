@@ -8,7 +8,15 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+/**
+ * A base class for all Rubik's Cube Model. There are various representation for Rubik's Cube.
+ * Each one has it's own special ways of definitions. This class provides a shared functionality
+ * between all models.
+ * We'll benchmark all models and observe which one is better for performance.
+ */
+
 class RubiksCube33 {
+
 
 public:
     enum class FACE {
@@ -47,27 +55,115 @@ public:
 
     };
 
+    /*
+   * Returns the color of the cell at (row, col) in face.
+   * If Rubik's Cube face is pointing at you, then the row numbering starts from the
+   * top to bottom, and column numbering starts from the left to right.
+   * The rows and columns are 0-indexed.
+   * @param Face, row, and column index
+   */
 
     virtual COLOR getcolor(FACE face, unsigned row, unsigned col) const = 0;
 
+    /*
+  * Returns the first letter of the given COLOR
+  * Eg: For COLOR::GREEN, it returns 'G'
+  */
+
     static char getColorLetter(COLOR color);
 
+
+    /*
+    * Returns true if the Rubik's Cube is solved, otherwise returns false.
+    */
     virtual bool isSolved() const = 0;
 
+
+
+    /*
+     * Returns the move in the string format.
+     */
+
     static string getMove(MOVE idx);
+
+    /*
+     * Print the Rubik Cube in Planar format.
+     *
+     * The cube is laid out as follows.
+     *
+     * The sides:
+     *    U
+     *  L F R B
+     *    D
+     *
+     * Color wise:
+     *
+     *          W W W
+     *          W W W
+     *          W W W
+     *
+     *  G G G   R R R   B B B   O O O
+     *  G G G   R R R   B B B   O O O
+     *  G G G   R R R   B B B   O O O
+     *
+     *          Y Y Y
+     *          Y Y Y
+     *          Y Y Y
+     *
+     * Row and Column Numberings:
+     * rx -> row numbering
+     * cx -> column numbering
+     * bx -> both row and column numbering
+     *
+     *             b0 c1 c2
+     *             r1  .  .
+     *             r2  .  .
+     *
+     *  b0 c1 c2   b0 c1 c2   b0 c1 c2   b0 c1 c2
+     *  r1  .  .   r1  .  .   r1  .  .   r1  .  .
+     *  r2  .  .   r2  .  .   r2  .  .   r2  .  .
+     *
+     *             b0 c1 c2
+     *             r1  .  .
+     *             r2  .  .
+     *
+     */
 
 
     void print() const;
 
 
+
+
+    /*
+     * Randomly shuffle the cube with 'times' moves and returns the moves performed.
+     */
+
     vector<MOVE> randomSuffleCube(unsigned int times);
 
-
+    /*
+   * Perform moves on the Rubik's Cube
+   */
     RubiksCube33 &move(MOVE idx);
+
+
+    /*
+    * Invert a move
+    */
 
     RubiksCube33 &invert(MOVE idx);
 
 
+    /*
+     * Rotational Moves on the Rubik's Cubes
+     *
+     * F, F’, F2,
+     * U, U’, U2,
+     * L, L’, L2,
+     * D, D’, D2,
+     * R, R’, R2,
+     * B, B’, B2
+     */
 
     virtual RubiksCube33 &f()=0;
     virtual RubiksCube33 &fprime()=0;
