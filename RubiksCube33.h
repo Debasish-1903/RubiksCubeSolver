@@ -38,7 +38,7 @@ public:
         L, LPRIME, L2,
         R, RPRIME, R2,
         F, FPRIME, F2,
-        B, BRIME, B2
+        B, BPRIME, B2
 
 
     };
@@ -157,21 +157,15 @@ public:
     /*
      * Rotational Moves on the Rubik's Cubes
      *
-     * F, F’, F2,
+
      * U, U’, U2,
-     * L, L’, L2,
      * D, D’, D2,
+     * L, L’, L2,
      * R, R’, R2,
+     * F, F’, F2,
      * B, B’, B2
      */
 
-    virtual RubiksCube33 &f()=0;
-    virtual RubiksCube33 &fprime()=0;
-    virtual RubiksCube33 &f2()=0;
-
-    virtual RubiksCube33 &b()=0;
-    virtual RubiksCube33 &bprime()=0;
-    virtual RubiksCube33 &b2()=0;
 
     virtual RubiksCube33 &u()=0;
     virtual RubiksCube33 &uprime()=0;
@@ -189,9 +183,18 @@ public:
     virtual RubiksCube33 &rprime()=0;
     virtual RubiksCube33 &r2()=0;
 
+    virtual RubiksCube33 &f()=0;
+    virtual RubiksCube33 &fprime()=0;
+    virtual RubiksCube33 &f2()=0;
+
+    virtual RubiksCube33 &b()=0;
+    virtual RubiksCube33 &bprime()=0;
+    virtual RubiksCube33 &b2()=0;
+
+
     string getCornerColorString(uint8_t idx)const;
 
-    uint8_t getCornerIndex(uint8_t idx);
+    uint8_t getCornerIndex(uint8_t idx)const;
 
 
     uint8_t getCornerOrientation(uint8_t idx) const;
