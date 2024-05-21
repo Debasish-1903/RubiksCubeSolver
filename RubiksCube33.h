@@ -63,7 +63,7 @@ public:
    * @param Face, row, and column index
    */
 
-    virtual COLOR getcolor(FACE face, unsigned row, unsigned col) const = 0;
+    virtual COLOR getColor(FACE face, unsigned row, unsigned col) const = 0;
 
     /*
   * Returns the first letter of the given COLOR
@@ -168,27 +168,29 @@ public:
 
 
     virtual RubiksCube33 &u()=0;
-    virtual RubiksCube33 &uprime()=0;
+    virtual RubiksCube33 &uPrime()=0;
     virtual RubiksCube33 &u2()=0;
 
+
+
     virtual RubiksCube33 &d()=0;
-    virtual RubiksCube33 &dprime()=0;
+    virtual RubiksCube33 &dPrime()=0;
     virtual RubiksCube33 &d2()=0;
 
     virtual RubiksCube33 &l()=0;
-    virtual RubiksCube33 &lprime()=0;
+    virtual RubiksCube33 &lPrime()=0;
     virtual RubiksCube33 &l2()=0;
 
     virtual RubiksCube33 &r()=0;
-    virtual RubiksCube33 &rprime()=0;
+    virtual RubiksCube33 &rPrime()=0;
     virtual RubiksCube33 &r2()=0;
 
     virtual RubiksCube33 &f()=0;
-    virtual RubiksCube33 &fprime()=0;
+    virtual RubiksCube33 &fPrime()=0;
     virtual RubiksCube33 &f2()=0;
 
     virtual RubiksCube33 &b()=0;
-    virtual RubiksCube33 &bprime()=0;
+    virtual RubiksCube33 &bPrime()=0;
     virtual RubiksCube33 &b2()=0;
 
 
