@@ -1,4 +1,4 @@
-//
+
 // Created by das31 on 07-03-2024.
 //
 
@@ -82,37 +82,37 @@ RubiksCube33 &RubiksCube33::move(MOVE idx){
         case MOVE::U:
             return this->u();
         case MOVE::UPRIME:
-            return this->uprime();
+            return this->uPrime();
         case MOVE::U2:
             return this->u2();
         case MOVE::D:
             return this->d();
         case MOVE::DPRIME:
-            return this->dprime();
+            return this->dPrime();
         case MOVE::D2:
             return this->d2();
         case MOVE::L:
             return this->l();
         case MOVE::LPRIME:
-            return this->lprime();
+            return this->lPrime();
         case MOVE::L2:
             return this->l2();
         case MOVE::R:
             return this->r();
         case MOVE::RPRIME:
-            return this->rprime();
+            return this->rPrime();
         case MOVE::R2:
             return this->r2();
         case MOVE::F:
             return this->f();
         case MOVE::FPRIME:
-            return this->fprime();
+            return this->fPrime();
         case MOVE::F2:
             return this->f2();
         case MOVE::B:
             return this->b();
         case MOVE::BPRIME:
-            return this->bprime();
+            return this->bPrime();
         case MOVE::B2:
             return this->b2();
 
@@ -129,37 +129,37 @@ RubiksCube33 &RubiksCube33::invert(MOVE idx) {
     switch (idx) {
 
         case MOVE::U:
-            return this->uprime();
+            return this->uPrime();
         case MOVE::UPRIME:
             return this->u();
         case MOVE::U2:
             return this->u2();
         case MOVE::D:
-            return this->dprime();
+            return this->dPrime();
         case MOVE::DPRIME:
             return this->d();
         case MOVE::D2:
             return this->d2();
         case MOVE::L:
-            return this->lprime();
+            return this->lPrime();
         case MOVE::LPRIME:
             return this->l();
         case MOVE::L2:
             return this->l2();
         case MOVE::R:
-            return this->rprime();
+            return this->rPrime();
         case MOVE::RPRIME:
             return this->r();
         case MOVE::R2:
             return this->r2();
         case MOVE::F:
-            return this->fprime();
+            return this->fPrime();
         case MOVE::FPRIME:
             return this->f();
         case MOVE::F2:
             return this->f2();
         case MOVE::B:
-            return this->bprime();
+            return this->bPrime();
         case MOVE::BPRIME:
             return this->b();
         case MOVE::B2:
@@ -179,7 +179,7 @@ void RubiksCube33::print() const {
 
         for(unsigned i=0;i<7;i++)cout<<" ";
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::UP,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::UP,row,col))<<" ";
         }
         cout<<"\n";
 
@@ -191,22 +191,22 @@ void RubiksCube33::print() const {
 
 
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::LEFT,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::LEFT,row,col))<<" ";
         }
         cout<<" ";
 
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::FRONT,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::FRONT,row,col))<<" ";
         }
         cout<<" ";
 
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::RIGHT,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::RIGHT,row,col))<<" ";
         }
         cout<<" ";
 
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::BACK,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::BACK,row,col))<<" ";
         }
 
         cout<<"\n";
@@ -216,7 +216,7 @@ void RubiksCube33::print() const {
 
         for(unsigned i=0;i<7;i++)cout<<" ";
         for(int col=0;col<=2;col++){
-            cout<<getColorLetter(getcolor(FACE::DOWN,row,col))<<" ";
+            cout<<getColorLetter(getColor(FACE::DOWN,row,col))<<" ";
         }
         cout<<"\n";
 
@@ -246,46 +246,46 @@ string RubiksCube33::getCornerColorString(uint8_t idx) const {
 
         //UFR
         case 0:
-            str+= getColorLetter(getcolor(FACE::UP,2,2));
-            str+=getColorLetter(getcolor(FACE::FRONT,0,2));
-            str+=getColorLetter(getcolor(FACE::RIGHT,0,0));
+            str+= getColorLetter(getColor(FACE::UP,2,2));
+            str+=getColorLetter(getColor(FACE::FRONT,0,2));
+            str+=getColorLetter(getColor(FACE::RIGHT,0,0));
         //UFL
         case 1:
-            str+= getColorLetter(getcolor(FACE::UP,2,0));
-            str+=getColorLetter(getcolor(FACE::FRONT,0,0));
-            str+=getColorLetter(getcolor(FACE::LEFT,0,2));
+            str+= getColorLetter(getColor(FACE::UP,2,0));
+            str+=getColorLetter(getColor(FACE::FRONT,0,0));
+            str+=getColorLetter(getColor(FACE::LEFT,0,2));
 
 
        //UBL
         case 2:
-            str+= getColorLetter(getcolor(FACE::UP,0,0));
-            str+=getColorLetter(getcolor(FACE::BACK,0,2));
-            str+=getColorLetter(getcolor(FACE::LEFT,0,0));
+            str+= getColorLetter(getColor(FACE::UP,0,0));
+            str+=getColorLetter(getColor(FACE::BACK,0,2));
+            str+=getColorLetter(getColor(FACE::LEFT,0,0));
        //UBR
         case 3:
-            str+= getColorLetter(getcolor(FACE::UP,0,2));
-            str+=getColorLetter(getcolor(FACE::BACK,0,0));
-            str+=getColorLetter(getcolor(FACE::RIGHT,0,2));
+            str+= getColorLetter(getColor(FACE::UP,0,2));
+            str+=getColorLetter(getColor(FACE::BACK,0,0));
+            str+=getColorLetter(getColor(FACE::RIGHT,0,2));
        //DFR
         case 4:
-            str+= getColorLetter(getcolor(FACE::DOWN,0,2));
-            str+=getColorLetter(getcolor(FACE::FRONT,2,2));
-            str+=getColorLetter(getcolor(FACE::RIGHT,2,0));
+            str+= getColorLetter(getColor(FACE::DOWN,0,2));
+            str+=getColorLetter(getColor(FACE::FRONT,2,2));
+            str+=getColorLetter(getColor(FACE::RIGHT,2,0));
        //DFL
         case 5:
-            str+= getColorLetter(getcolor(FACE::DOWN,0,0));
-            str+=getColorLetter(getcolor(FACE::FRONT,2,0));
-            str+=getColorLetter(getcolor(FACE::LEFT,2,2));
+            str+= getColorLetter(getColor(FACE::DOWN,0,0));
+            str+=getColorLetter(getColor(FACE::FRONT,2,0));
+            str+=getColorLetter(getColor(FACE::LEFT,2,2));
        //DBL
         case 6:
-            str+= getColorLetter(getcolor(FACE::DOWN,2,0));
-            str+=getColorLetter(getcolor(FACE::BACK,2,2));
-            str+=getColorLetter(getcolor(FACE::LEFT,2,0));
+            str+= getColorLetter(getColor(FACE::DOWN,2,0));
+            str+=getColorLetter(getColor(FACE::BACK,2,2));
+            str+=getColorLetter(getColor(FACE::LEFT,2,0));
        //DBR
         case 7:
-            str+= getColorLetter(getcolor(FACE::DOWN,2,2));
-            str+=getColorLetter(getcolor(FACE::BACK,2,0));
-            str+=getColorLetter(getcolor(FACE::RIGHT,2,2));
+            str+= getColorLetter(getColor(FACE::DOWN,2,2));
+            str+=getColorLetter(getColor(FACE::BACK,2,0));
+            str+=getColorLetter(getColor(FACE::RIGHT,2,2));
 
     }
     return str;
@@ -326,7 +326,7 @@ uint8_t RubiksCube33::getCornerOrientation(uint8_t idx) const {
 
     for(auto it:corner){
 
-        if(it!='W'&&it!="Y")continue;
+        if(it!='W'&& it !='Y')continue;
         actual_string.push_back(it);
 
     }

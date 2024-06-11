@@ -22,11 +22,11 @@ public:
     enum class FACE {
 
         UP,
-        DOWN,
         LEFT,
-        RIGHT,
         FRONT,
-        BACK
+        RIGHT,
+        BACK,
+        DOWN
 
 
     };
@@ -47,11 +47,11 @@ public:
     enum class COLOR {
 
         WHITE,
-        YELLOW,
         GREEN,
-        BLUE,
         RED,
-        ORANGE
+        BLUE,
+        ORANGE,
+        YELLOW
 
     };
 
