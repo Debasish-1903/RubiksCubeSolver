@@ -228,7 +228,7 @@ vector<RubiksCube33::MOVE>RubiksCube33::randomSuffleCube(unsigned int times) {
     vector<MOVE>moves_performed;
     srand(time(0));
     for(unsigned int i=0;i<times;i++){
-        unsigned int selectMove=(rand()%18);
+        unsigned int selectMove=(rand()%18); // for 18 moves
         moves_performed.push_back(static_cast<MOVE>(selectMove));
         this->move(static_cast<MOVE>(selectMove));
     }
