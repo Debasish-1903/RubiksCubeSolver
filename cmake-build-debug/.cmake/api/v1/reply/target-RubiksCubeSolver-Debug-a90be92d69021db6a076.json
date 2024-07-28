@@ -120,7 +120,8 @@
 				9,
 				11,
 				13,
-				15
+				15,
+				16
 			]
 		}
 	],
@@ -212,6 +213,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "PatternDB/math.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "PatternDB/PermutationIndexer.h",
 			"sourceGroupIndex" : 1
 		}
 	],
