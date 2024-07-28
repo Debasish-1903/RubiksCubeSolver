@@ -61,7 +61,8 @@
 				4,
 				5,
 				10,
-				12
+				12,
+				14
 			]
 		}
 	],
@@ -104,7 +105,8 @@
 				4,
 				5,
 				10,
-				12
+				12,
+				14
 			]
 		},
 		{
@@ -117,7 +119,8 @@
 				8,
 				9,
 				11,
-				13
+				13,
+				15
 			]
 		}
 	],
@@ -198,6 +201,17 @@
 		{
 			"backtrace" : 1,
 			"path" : "PatternDB/PatternDatabase.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "PatternDB/math.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "PatternDB/math.h",
 			"sourceGroupIndex" : 1
 		}
 	],
